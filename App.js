@@ -5,7 +5,8 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login';
-
+import AddCart from './components/AddCart';
+import OrderPlaced from './components/OrderPlaced';
 
 // function HomeScreen() {
 //   return (
@@ -38,7 +39,7 @@ function App() {
       },
       headerTintColor:'white'
       }} 
-      name="Login" component={Login} />
+      name="Login" component={OrderPlaced} />
       
       
       </Stack.Navigator>
