@@ -23,68 +23,88 @@ export default class AddCart extends Component {
 
     render() {
         return (
-            <View >
-                <View flexDirection='column' >
-                    <Text style={{ fontWeight: 'bold', fontSize: 30, marginTop: 20, marginBottom: 20, marginLeft: 20 }}>Cart</Text>
-                    <View flexDirection="column">
+
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'stretch',
+            }} >
+                <Text style={{ fontWeight: 'bold', fontSize: 30, marginTop: 20, marginBottom: 20, marginLeft: 20 }}>Cart</Text>
+
+                <View style={{
+                    height: 50,
+                    flex: 8,
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'stretch',
+                }}>
+                    <Image style={{
+
+                        width: 200,
+                        height: 200,
+                        borderRadius: 1000 / 2,
+                        borderColor: 'white',
+                        borderWidth: 2
+                    }} source={require('../src/images/item1.jpg')} />
+                    <View style={{
+                        flex: 7,
+
+                    }}>
+                        <Text style={styles.inText}>V Neck Shirt-PINK</Text>
+                        <Text style={styles.inText}>1 PINK</Text>
+                        <View>
+                            <Text style={{ marginTop: 20, color: 'red', fontSize: 20, marginLeft: 20, marginBottom: 10 }}>$24.99</Text>
+
+                        </View>
                         <View flexDirection='row'>
                             <Image style={{
 
-                                width: 200,
-                                height: 200,
-                                borderRadius: 1000 / 2,
+                                width: 30,
+                                height: 27,
+                                marginLeft: 20,
+                                marginRight: 10,
                                 borderColor: 'white',
-                                borderWidth: 2
-                            }} source={require('../src/images/item1.jpg')} />
-                            <View flexDirection='column'>
-                                <Text style={styles.inText}>V Neck Shirt-PINK</Text>
-                                <Text style={styles.inText}>1 PINK</Text>
-                                <View>
-                                    <Text style={{ marginTop: 20, color: 'red', fontSize: 20, marginLeft: 20, marginBottom: 10 }}>$24.99</Text>
 
-                                </View>
-                                <View flexDirection='row'>
-                                    <Image style={{
+                            }} source={require('../src/images/add.jpeg')} />
+                            <Text style={{ marginTop: 7 }}>1</Text>
+                            <Image style={{
+                                marginTop: 4,
+                                width: 30,
+                                height: 27,
+                                marginLeft: 10,
+                                borderColor: 'white',
 
-                                        width: 30,
-                                        height: 27,
-                                        marginLeft: 20,
-                                        marginRight: 10,
-                                        borderColor: 'white',
-
-                                    }} source={require('../src/images/add.jpeg')} />
-                                    <Text style={{ marginTop: 7 }}>1</Text>
-                                    <Image style={{
-                                        marginTop: 4,
-                                        width: 30,
-                                        height: 27,
-                                        marginLeft: 10,
-                                        borderColor: 'white',
-
-                                    }} source={require('../src/images/remove.jpeg')} />
-                                </View>
-                            </View>
-
-
+                            }} source={require('../src/images/remove.jpeg')} />
                         </View>
                     </View>
+
+
                 </View>
 
-                <SafeAreaView>
-                    <View style={{ alignSelf: 'flex-end', marginRight: 20, marginTop: 400 }}>
 
-                        <View style={styles.checkoutContainer}>
-                            <TouchableHighlight style={[styles.checkoutContainer, styles.checkoutButton]} onPress={() => navigation.navigate('CheckoutPage')}>
-                                <View>
-                                    <Text style={styles.checkoutText}>Checkout</Text>
-                                    <Image source={require('../src/images/arrownew.png')} style={{ borderRadius: 50, width: 35, height: 35, position: 'absolute', right: -50, marginTop: -10 }} />
 
-                                </View>
-                            </TouchableHighlight>
+                <View style={{ flexDirection: 'column', flex: 2 }}>
 
-                        </View>
+
+                    <View style={styles.checkoutContainer}>
+
+                        <TouchableHighlight style={[styles.checkoutContainer, styles.checkoutButton]} onPress={() => navigation.navigate('CheckoutPage')}>
+                            <View>
+                                <Text style={styles.checkoutText}>Checkout</Text>
+                                <Image source={require('../src/images/arrownew.png')} style={{ borderRadius: 50, width: 35, height: 35, position: 'absolute', right: -50, marginTop: -10 }} />
+
+                            </View>
+                        </TouchableHighlight>
+
                     </View>
-                </SafeAreaView>
+                    <View style={{ flex: 1, flexDirection: 'column', position: 'absolute', marginLeft: 10 }}>
+                        <Text style={{ fontWeight: '200' }}>TOTAL</Text>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold' }}>$24.99</Text>
+                        <Text style={{ fontSize: 15, fontWeight: '300' }}>Free Domestic Shipping</Text>
+                    </View>
+
+                </View>
             </View >
         );
     }
@@ -102,11 +122,14 @@ const styles = StyleSheet.create({
     },
 
     checkoutContainer: {
+        flex: 2,
+        flexDirection: 'column',
+        alignSelf: 'flex-end',
         height: 45,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom: 40,
         width: 170,
         borderRadius: 30,
     },
