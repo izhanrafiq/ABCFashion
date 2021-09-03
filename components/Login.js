@@ -47,14 +47,16 @@ export default class Login extends Component {
 
     render() {
         return (
-            <View style={{display:'flex',height:'100%'}}>
-                <View style={{display:"flex",height:'70%',justifyContent:'center',backgroundColor:"black"}}>
+            <View style={{display:'flex',flexDirection:'column',height:'100%'}}>
+                <View style={{display:"flex",marginTop:50,height:'10%',justifyContent:'center',backgroundColor:"black"}}>
                 <Image 
-                style={{display:"flex", height:'15%',width:"100%",justifyContent:"center",resizeMode:"stretch",}}
+                style={{display:"flex", height:'100%',width:"100%",justifyContent:"center"}}
                 source={require('../src/images/logo_fashion.jpg')}/>
+            </View>
 
             <View style={styles.container}>
-                <View style={styles.inputContainer}>
+                    <View style={{backgroundColor:'white',borderRadius:10,display:'flex',alignItems:'center',justifyContent:'center',height:150,width:'80%'}}>
+                <View style={{...styles.inputContainer,borderBottomWidth:1,borderBottomColor:'#ddd'}}>
                     <Image style={styles.inputIcon}
                         source={require('../src/images/man.png')} />
                     <TextInput style={styles.inputs}
@@ -64,7 +66,6 @@ export default class Login extends Component {
                         value={this.state.email}
                         onChangeText={(email) => this.setState({ email })} />
                 </View>
-
                 <View style={styles.inputContainer}>
                     <Image style={styles.inputIcon}
                         source={require('../src/images/padlock.png')} />
@@ -75,19 +76,24 @@ export default class Login extends Component {
                         value={this.state.password}
                         onChangeText={(password) => this.setState({ password })} />
                 </View>
+                </View>
 
                 <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onLoginButton()}>
-                    <Text style={styles.loginText}>Login</Text>
+                    <View style={{width:'100%',display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',position:'relative'}}>
+                    <Text style={styles.loginText}>Log In</Text>
+                    <Image source={require('../src/images/arrownew.png')} style={{borderRadius:50,width:35,height:35,position:'absolute',right:10}}/>
+                        
+                    </View>
                 </TouchableHighlight>
                 <View>
                     <Text>Don't have an account? Swipe right to create</Text>
                     {/* <View style={{display:"flex",backgroundColor:'green',width:'100%'}}> */}
-                    <Text style={{display:"flex",flexDirection:'',alignContent:"center"}}>a new account</Text>
+                    <Text style={{display:"flex",justifyContent:"center",textAlign:'center'}}>a new account</Text>
 
                     {/* </View> */}
                 </View>
                 </View>
-                </View>
+                
             </View>
         );
     }
@@ -97,7 +103,8 @@ const styles = StyleSheet.create({
     container: {
         display:'flex',
         flexDirection:'column',
-        flex: 1,
+        // flex: 1,
+        marginTop:50,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#f5f6f8',
@@ -105,16 +112,16 @@ const styles = StyleSheet.create({
     inputContainer: {
         borderBottomColor: '#F5FCFF',
         backgroundColor: 'white',
-        borderRadius: 30,
-        borderBottomWidth: 1,
-        width: 270,
-        height: 45,
-        marginBottom: 20,
+        borderRadius: 10,
+        // borderBottomWidth: 1,
+        width: "95%",
+        height: "45%",
+        // marginBottom: 20,
         flexDirection: 'row',
         alignItems: 'center',
     },
     inputs: {
-        height: 45,
+        height: "45%",
         marginLeft: 16,
         borderBottomColor: '#FFFFFF',
         flex: 1,
@@ -131,14 +138,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 20,
-        width: 270,
+        marginTop:20,
+        width: 300,
         borderRadius: 30,
     },
     loginButton: {
         // backgroundColor: "#00b5ec",
+        
         backgroundColor: "#ff6969",
     },
     loginText: {
         color: 'white',
+        fontSize:16,
+        fontWeight:"900"
     }
 });
