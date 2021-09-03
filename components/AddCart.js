@@ -45,9 +45,9 @@ export default class AddCart extends Component {
                     </View>
                 </View>
                 <View style={{ alignSelf: 'flex-end', marginRight: 20, marginTop: 400 }}>
-                    <View style={styles.buttonContainer}>
-                        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => navigation.navigate('AddCustomer')}>
-                            <Text style={styles.loginText}>Checkout</Text>
+                    <View style={styles.checkoutContainer}>
+                        <TouchableHighlight style={[styles.checkoutContainer, styles.checkoutButton]} onPress={() => navigation.navigate('CheckoutPage')}>
+                            <Text style={styles.checkoutText}>Checkout</Text>
                         </TouchableHighlight>
                     </View>
                 </View>
@@ -65,50 +65,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '300'
     },
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f5f6f8',
-    },
-    inputContainer: {
-        borderBottomColor: '#F5FCFF',
-        backgroundColor: 'white',
-        borderRadius: 30,
-        borderBottomWidth: 1,
-        width: 270,
-        height: 45,
-        marginBottom: 20,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    inputs: {
-        height: 45,
-        marginLeft: 16,
-        borderBottomColor: '#FFFFFF',
-        flex: 1,
-    },
-    inputIcon: {
-        width: 30,
-        height: 30,
-        marginLeft: 15,
-        justifyContent: 'center'
-    },
 
-    loginButton: {
-        // backgroundColor: "#00b5ec",
-        backgroundColor: "#ff6969",
-    },
-    loginText: {
-
-
-        fontFamily: 'Neusa Next Std',
-
-        color: 'white',
-    },
-    buttonContainer: {
+    checkoutContainer: {
         height: 45,
         flexDirection: 'row',
         justifyContent: 'center',
@@ -117,10 +75,10 @@ const styles = StyleSheet.create({
         width: 170,
         borderRadius: 30,
     },
-    loginButton: {
+    checkoutButton: {
         backgroundColor: "#ff6969",
     },
-    loginText: {
+    checkoutText: {
         color: 'white',
     }
 });
