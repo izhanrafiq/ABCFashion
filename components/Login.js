@@ -8,6 +8,8 @@ import {
   TouchableHighlight,
   Image,
   Alert,
+  ScrollView,
+  SafeAreaView,
 } from 'react-native';
 // import Footer from './Footer';
 import AddCart from './AddCart';
@@ -47,7 +49,9 @@ export default class Login extends Component {
 
   render() {
     return (
-      <View style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
+        <ScrollView>
+            <SafeAreaView>
+                <View style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
         <View
           style={{
             display: 'flex',
@@ -154,6 +158,8 @@ export default class Login extends Component {
           </View>
         </View>
       </View>
+            </SafeAreaView>
+        </ScrollView>
     );
   }
 }

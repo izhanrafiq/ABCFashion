@@ -8,7 +8,9 @@ import {
     Button,
     TouchableHighlight,
     Image,
-    Alert
+    Alert,
+    ScrollView,
+    SafeAreaView
 } from 'react-native';
 import Categories from './Categories';
 import Notification from './Notification';
@@ -19,6 +21,8 @@ function Product(){
 const [msgCount,setMsgCount]=useState(0);
 const [notifyCount,setNotifyCount]=useState(0);
 return(
+    <ScrollView>
+        <SafeAreaView>
     <View style={Styles.main}>
         <Notification msgCount={msgCount} notifyCount={notifyCount}/>
         <View style={Styles.categoryDiv}>
@@ -31,6 +35,8 @@ return(
         </View>
         <ProductList/>
     </View>
+    </SafeAreaView>
+    </ScrollView>
 )
 }
 const Styles = StyleSheet.create({
