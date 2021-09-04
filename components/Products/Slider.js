@@ -16,7 +16,7 @@ import slide1 from './../../src/images/carolsel/slide1.jpg';
 import slide2 from './../../src/images/carolsel/slide2.jpg';
 import slide3 from './../../src/images/carolsel/slide3.jpg';
 import arrowIcon from './../../src/images/arrownew.png';
-
+import { useNavigation } from '@react-navigation/native';
 const caroItem =[
     {imageSrc:slide1,desc:'For all your summer doing needs '},
     {imageSrc:slide2,desc:'For all your summer doing needs '},
@@ -26,6 +26,7 @@ const caroItem =[
 function Slider() {
     const [activeIndex,setActiveIndex]=useState(0)
     const [caroselItem,setCaroselItem]=useState(caroItem);
+    const navigation = useNavigation();
     const ref = useRef(null);
     const renderItem = useCallback(({item,index})=>(
         <View style={sliderStyle.main}>
@@ -35,7 +36,7 @@ function Slider() {
                     <Text style={{color:'#fff',fontSize:20}}>{item.desc}</Text>
                 </View>
                 <View style={{position:'absolute'}}>
-                    <TouchableOpacity style={{position:'absolute',right:0,top:30}}>
+                    <TouchableOpacity style={{position:'absolute',right:0,top:30}} onPress={()=>navigation.navigate('SearchProduct')}>
                         <View style={sliderStyle.btnDiv}>
                             <Text style={{color:'rgb(95 ,99 ,103)'}}>See All</Text>
                             <Image source={arrowIcon} style={sliderStyle.arrIcon}/>
