@@ -5,17 +5,9 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './components/Login';
+import Product from './components/Products/Index';
 
 
-// function HomeScreen() {
-//   return (
-//     <View style={{  alignItems: 'center', justifyContent: 'center' }}>
-//       <Menu/>
-//       <Text>Home Screen</Text>
-//       <LocalStorageApp/>
-//     </View>
-//   );
-// }
 
 function AboutScreen() {
   return (
@@ -39,6 +31,13 @@ function App() {
       headerTintColor:'white'
       }} 
       name="Login" component={Login} />
+      <Stack.Screen 
+      options={{headerStyle:{
+        backgroundColor:'#ff6969'
+      },
+      headerTintColor:'white'
+      }} 
+      name="Product" component={Product} />
       
       
       </Stack.Navigator>
