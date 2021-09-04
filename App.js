@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Login from './components/Login';
 import Product from './components/Products/Index';
 import AddCart from './components/AddCart';
+import SearchProduct from './components/Search/index';
 
 function AboutScreen() {
   return (
@@ -14,6 +15,7 @@ function AboutScreen() {
     </View>
   );
 }
+
 
 const Stack = createStackNavigator();
 
@@ -50,6 +52,19 @@ function App() {
           }}
           name="Cart"
           component={AddCart}
+        />
+        <Stack.Screen
+          options={{
+            headerStyle: {
+              backgroundColor: '#ff6969',
+            },
+            headerTintColor: 'white',
+            // headerShown:false
+            headerLeft:null,
+          }}
+          
+          name="SearchProduct"
+          component={SearchProduct}
         />
       </Stack.Navigator>
     </NavigationContainer>

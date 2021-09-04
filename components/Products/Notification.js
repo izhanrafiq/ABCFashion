@@ -5,6 +5,7 @@ import {
     Text,
     View,
     Image,
+    TouchableOpacity,
 } from 'react-native';
 import BellIcon from '../../src/images/alarm.png';
 import msgIcon from '../../src/images/message.png';
@@ -12,21 +13,24 @@ import msgIcon from '../../src/images/message.png';
 function Notification({msgCount,notifyCount}){
 return(
     <View style={Styles.mainDiv}>
-        <View style={{...Styles.pRelative}}>
-        <Image source={msgIcon} style={Styles.img}/>
-        <View style={Styles.notifyCount}>
+        <TouchableOpacity>
+            <View style={{...Styles.pRelative}}>
+                <Image source={msgIcon} style={Styles.img}/>
+                <View style={Styles.notifyCount}>
+                    <Text >{msgCount}</Text>
+                </View>
+            </View>
+        </TouchableOpacity>
 
-        <Text >{msgCount}</Text>
-        </View>
-        </View>
-
-        <View style={{...Styles.pRelative}}>
-        <Image source={BellIcon} style={Styles.img}/>
+        <TouchableOpacity>
+            <View style={{...Styles.pRelative}}>
+                <Image source={BellIcon} style={Styles.img}/>
         <View style={Styles.notifyCount}>
 
         <Text >{notifyCount}</Text>
         </View>
         </View>
+        </TouchableOpacity>
     </View>
 )};
 

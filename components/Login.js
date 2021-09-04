@@ -8,6 +8,8 @@ import {
   TouchableHighlight,
   Image,
   Alert,
+  ScrollView,
+  SafeAreaView,
 } from 'react-native';
 // import Footer from './Footer';
 import AddCart from './AddCart';
@@ -27,7 +29,7 @@ export default class Login extends Component {
     console.log('>> on login button');
     if (this.state.email == this.state.password) {
       this.props.navigation.navigate('Product');
-    //   this.props.navigation.navigate('Cart');
+      //   this.props.navigation.navigate('Cart');
       this.setState({
         email: '',
         password: '',
@@ -47,113 +49,118 @@ export default class Login extends Component {
 
   render() {
     return (
-      <View style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
-        <View
-          style={{
-            display: 'flex',
-            marginTop: 50,
-            height: '10%',
-            justifyContent: 'center',
-            backgroundColor: 'black',
-          }}>
-          <Image
-            style={{
-              display: 'flex',
-              height: '100%',
-              width: '100%',
-              justifyContent: 'center',
-            }}
-            source={require('../src/images/logo_fashion.jpg')}
-          />
-        </View>
-
-        <View style={styles.container}>
+      <ScrollView>
+        <SafeAreaView>
           <View
-            style={{
-              backgroundColor: 'white',
-              borderRadius: 10,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: 150,
-              width: '80%',
-            }}>
+            style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
             <View
               style={{
-                ...styles.inputContainer,
-                borderBottomWidth: 1,
-                borderBottomColor: '#ddd',
-              }}>
-              <Image
-                style={styles.inputIcon}
-                source={require('../src/images/man.png')}
-              />
-              <TextInput
-                style={styles.inputs}
-                placeholder="Username"
-                keyboardType="email-address"
-                underlineColorAndroid="transparent"
-                value={this.state.email}
-                onChangeText={email => this.setState({email})}
-              />
-            </View>
-            <View style={styles.inputContainer}>
-              <Image
-                style={styles.inputIcon}
-                source={require('../src/images/padlock.png')}
-              />
-              <TextInput
-                style={styles.inputs}
-                placeholder="Password"
-                secureTextEntry={true}
-                underlineColorAndroid="transparent"
-                value={this.state.password}
-                onChangeText={password => this.setState({password})}
-              />
-            </View>
-          </View>
-
-          <TouchableHighlight
-            style={[styles.buttonContainer, styles.loginButton]}
-            onPress={() => this.onLoginButton()}>
-            <View
-              style={{
-                width: '100%',
                 display: 'flex',
-                flexDirection: 'row',
+                marginTop: 50,
+                height: '10%',
                 justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative',
+                backgroundColor: 'black',
               }}>
-              <Text style={styles.loginText}>Log In</Text>
               <Image
-                source={require('../src/images/arrownew.png')}
                 style={{
-                  borderRadius: 50,
-                  width: 35,
-                  height: 35,
-                  position: 'absolute',
-                  right: 10,
+                  display: 'flex',
+                  height: '100%',
+                  width: '100%',
+                  justifyContent: 'center',
                 }}
+                source={require('../src/images/logo_fashion.jpg')}
               />
             </View>
-          </TouchableHighlight>
-          <View>
-            <Text>Don't have an account? Swipe right to create</Text>
-            {/* <View style={{display:"flex",backgroundColor:'green',width:'100%'}}> */}
-            <Text
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                textAlign: 'center',
-              }}>
-              a new account
-            </Text>
 
-            {/* </View> */}
+            <View style={styles.container}>
+              <View
+                style={{
+                  backgroundColor: 'white',
+                  borderRadius: 10,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: 150,
+                  width: '80%',
+                }}>
+                <View
+                  style={{
+                    ...styles.inputContainer,
+                    borderBottomWidth: 1,
+                    borderBottomColor: '#ddd',
+                  }}>
+                  <Image
+                    style={styles.inputIcon}
+                    source={require('../src/images/man.png')}
+                  />
+                  <TextInput
+                    style={styles.inputs}
+                    placeholder="Username"
+                    keyboardType="email-address"
+                    underlineColorAndroid="transparent"
+                    value={this.state.email}
+                    onChangeText={email => this.setState({email})}
+                  />
+                </View>
+                <View style={styles.inputContainer}>
+                  <Image
+                    style={styles.inputIcon}
+                    source={require('../src/images/padlock.png')}
+                  />
+                  <TextInput
+                    style={styles.inputs}
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    underlineColorAndroid="transparent"
+                    value={this.state.password}
+                    onChangeText={password => this.setState({password})}
+                  />
+                </View>
+              </View>
+
+              <TouchableHighlight
+                style={[styles.buttonContainer, styles.loginButton]}
+                onPress={() => this.onLoginButton()}>
+                <View
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'relative',
+                  }}>
+                  <Text style={styles.loginText}>Log In</Text>
+                  <Image
+                    source={require('../src/images/arrownew.png')}
+                    style={{
+                      borderRadius: 50,
+                      width: 35,
+                      height: 35,
+                      position: 'absolute',
+                      right: 10,
+                    }}
+                  />
+                </View>
+              </TouchableHighlight>
+              <View>
+                <Text>Don't have an account? Swipe right to create</Text>
+                {/* <View style={{display:"flex",backgroundColor:'green',width:'100%'}}> */}
+                <Text
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                  }}>
+                  a new account
+                </Text>
+
+                {/* </View> */}
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
+        </SafeAreaView>
+      </ScrollView>
     );
   }
 }

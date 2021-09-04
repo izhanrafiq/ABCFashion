@@ -10,16 +10,22 @@ import {
     Alert,
     TouchableOpacity
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import shoeIcon from '../../src/images/shoeCate.jpeg';
 import tShirtIcon from '../../src/images/tshirtCate.jpeg';
 import beautyIcon from '../../src/images/beauty.jpeg';
 import viewAllIcon from '../../src/images/seeall.png';
 
 const CateItem = ({label,icon,isLast})=>{
+    const navigation = useNavigation();
     return(
         <View style={cateItemStyle.mainDiv}>
             <View style={cateItemStyle.itemDiv}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                    if(label==="See All"){
+                        navigation.navigate("SearchProduct");
+                    }
+                }}>
                     <Image style={{...cateItemStyle.img,transform:isLast && [{rotate:'90deg'}]}} source={icon}/>
                 </TouchableOpacity>
             </View>
