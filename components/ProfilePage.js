@@ -13,6 +13,7 @@ import { getCustomers, deleteCustomer } from "../service/CustomerDetails";
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Notification from './Products/Notification';
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -65,7 +66,7 @@ const ProfileScreen = ({ navigation }) => {
     const [msgCount, setMsgCount] = useState(0);
     const [notifyCount, setNotifyCount] = useState(0);
     var cus = getCustomers();
-
+    const nav = useNavigation();
     const [cnt, setcnt] = useState(0);
     // const [customers, setCustomers] = useState([]);
 
@@ -117,7 +118,7 @@ const ProfileScreen = ({ navigation }) => {
                             }}
 
                                 onPress={() =>
-                                    navigation.navigate("EditProfile", { id: item.id, name: item.name, email: item.email, phone: item.phone, address: item.address, city: item.city })}>
+                                    nav.navigate("EditProfile", { id: item.id, name: item.name, email: item.email, phone: item.phone, address: item.address, city: item.city })}>
                                 <Text style={styles.loginText}>Edit Profile</Text>
                             </TouchableHighlight>
 

@@ -8,7 +8,8 @@ import AddCart from './components/AddCart';
 import SearchProduct from './components/Search/index';
 import Navigation from './components/Navigation';
 import OrderPlaced from './components/OrderPlaced';
-import ProductPage from './components/ProductPage'
+import ProductPage from './components/ProductPage';
+import EditProfileScreen from './components/EditProfile';
 const Stack = createStackNavigator();
 
 function App() {
@@ -93,6 +94,17 @@ function App() {
           }}
           name="ProductPage"
           component={ProductPage}
+        />
+        <Stack.Screen
+          options={{
+            headerStyle: {
+              backgroundColor: '#ff6969',
+            },
+            headerTintColor: 'white',
+            headerLeft: null,
+          }}
+          name="EditProfile"
+          component={EditProfileScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
