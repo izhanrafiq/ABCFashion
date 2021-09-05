@@ -61,6 +61,7 @@ const list2 = [
 
 const ProfileScreen = ({ navigation }) => {
 
+
     const [msgCount, setMsgCount] = useState(0);
     const [notifyCount, setNotifyCount] = useState(0);
     var cus = getCustomers();
