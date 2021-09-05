@@ -12,7 +12,7 @@ import { ListItem } from 'react-native-elements'
 import { getCustomers, deleteCustomer } from "../service/CustomerDetails";
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import Notification from './Products/Notification';
 
 
 
@@ -60,7 +60,8 @@ const list2 = [
 
 
 const ProfileScreen = ({ navigation }) => {
-
+    const [msgCount, setMsgCount] = useState(0);
+    const [notifyCount, setNotifyCount] = useState(0);
     var cus = getCustomers();
     var item = cus[0];
     const [cnt, setcnt] = useState(0);
@@ -86,8 +87,9 @@ const ProfileScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
-
+            <Notification sytle={{ marginRight: 0 }} msgCount={msgCount} notifyCount={notifyCount} />
             <View style={styles.userInfoSection}>
+
                 <View style={{ flexDirection: 'row', marginTop: 15 }}>
                     <Avatar.Image
                         source={{

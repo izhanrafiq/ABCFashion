@@ -13,6 +13,7 @@ import { ListItem } from 'react-native-elements'
 //import { getCustomers, deleteCustomer } from "../service/CustomerDB1";
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Notification from './Products/Notification';
 
 
 
@@ -44,13 +45,15 @@ const list1 = [
 
 const MoreScreen = ({ navigation }) => {
 
-
+    const [msgCount, setMsgCount] = useState(0);
+    const [notifyCount, setNotifyCount] = useState(0);
 
 
 
 
     return (
         <SafeAreaView style={styles.container}>
+            <Notification sytle={{ marginRight: 0 }} msgCount={msgCount} notifyCount={notifyCount} />
 
             <View style={{ flexDirection: 'column' }}>
                 <Text style={{ fontWeight: '500', marginLeft: 20, marginTop: 20, fontSize: 40, marginBottom: 30 }}>More</Text>
