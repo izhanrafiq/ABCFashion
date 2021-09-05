@@ -9,6 +9,8 @@ import {
     Button,
 } from 'react-native-paper';
 import { ListItem } from 'react-native-elements'
+import { useNavigation } from '@react-navigation/native';
+
 //Icon add in the above list
 //import { getCustomers, deleteCustomer } from "../service/CustomerDB1";
 
@@ -47,7 +49,7 @@ const MoreScreen = ({ navigation }) => {
     const [msgCount, setMsgCount] = useState(0);
     const [notifyCount, setNotifyCount] = useState(0);
 
-
+    const nav = useNavigation()
 
 
     return (
@@ -92,7 +94,7 @@ const MoreScreen = ({ navigation }) => {
             </View>
             <Text></Text>
             <View style={{ justifyContent: 'center', marginTop: 40 }}>
-                <Button onPress={() => { this.props.navigation.navigate('Login') }} ><Text style={{ color: 'red' }}>LOG OUT</Text></Button>
+                <Button onPress={() => nav.navigate('Login')} ><Text style={{ color: 'red' }}>LOG OUT</Text></Button>
             </View>
         </SafeAreaView>
     );
