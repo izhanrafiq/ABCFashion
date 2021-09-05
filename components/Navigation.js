@@ -22,7 +22,6 @@ const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
@@ -62,7 +61,6 @@ export default function Navigation() {
         <Tab.Screen name={moreName} component={MoreScreen} />
 
       </Tab.Navigator>
-    </NavigationContainer>
   );
 }
 
