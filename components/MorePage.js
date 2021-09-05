@@ -45,6 +45,7 @@ const list1 = [
 
 const MoreScreen = ({ navigation }) => {
 
+
     const [msgCount, setMsgCount] = useState(0);
     const [notifyCount, setNotifyCount] = useState(0);
 
