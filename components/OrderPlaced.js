@@ -34,7 +34,7 @@ const OrderPlaced = (props) => {
                     </Text>
                 </View>
             </View>
-            <TouchableHighlight onPress={() => nav.navigate("ProductPage")} style={[styles.buttonContainer, styles.loginButton]} >
+            <TouchableHighlight onPress={() => nav.navigate("Product")} style={[styles.buttonContainer, styles.loginButton]} >
                 <View style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
                     <Text style={styles.loginText}>ORDER MORE</Text>
                     <Image source={require('../src/images/arrownew.png')} style={{ borderRadius: 50, width: 35, height: 35, position: 'absolute', right: 10 }} />
