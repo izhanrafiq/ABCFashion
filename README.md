@@ -38,7 +38,7 @@
 
 ## TROUBLE SHOOTING
 
-###### Try installing any of the following the dependencies
+###### Try installing any of the following dependencies
 
 - `yarn add react-native-screens react-native-safe-area-context`
 - `yarn add @react-navigation/native`
