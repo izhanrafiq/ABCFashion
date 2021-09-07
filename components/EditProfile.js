@@ -8,13 +8,8 @@ import {
     StyleSheet,
 } from 'react-native';
 
-
-
-
 import Animated from 'react-native-reanimated';
 import { updateCustomer } from '../service/CustomerDetails';
-
-
 
 const EditProfileScreen = (props) => {
     const [name, onChangeName] = React.useState(props.route.params.name);

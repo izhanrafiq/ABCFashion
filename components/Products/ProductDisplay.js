@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { Component, useEffect, useState } from 'react';
 import {
     StyleSheet,
@@ -12,11 +13,13 @@ import {
 } from 'react-native';
 const path = './../../src/images/productlist'
 const ProductDisplay = ({imgSrc,prodName,price,width,height})=>{
+    const navigation = useNavigation();
     // const imgPath = path+imgSrc
     // console.log('ooooooo',imgPath,typeof imgPath);
     return(
         <View style={[productItemStyle.mainDiv,{width,height}]}>
-            <TouchableOpacity style={{width:'100%'}}>
+            <TouchableOpacity style={{width:'100%'}} onPress={()=>{navigation.navigate('ProductPage')}}>
+
             <View style={{height:"80%",width:"100%"}}>
                     <Image style={productItemStyle.img} source={imgSrc}/>
             </View>
@@ -26,6 +29,7 @@ const ProductDisplay = ({imgSrc,prodName,price,width,height})=>{
         </View>
     )
 }
+
 const productItemStyle = StyleSheet.create({
     mainDiv:{
         height:"100%",

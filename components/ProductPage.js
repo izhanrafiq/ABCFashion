@@ -15,6 +15,7 @@ import cartIcon from '../src/images/cart.png';
 import backBtn from '../src/images/back.png';
 import { bold } from 'chalk';
 import { useNavigation } from '@react-navigation/native';
+import Navigation from './Navigation';
 
 
 
@@ -108,7 +109,9 @@ const ProductPage = (props) => {
         <View style={styles.container}>
             <View style={styles.bar}>
                 <View style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={()=>{nav.navigate('Navigation')}}>
                     <Image source={backBtn} style={styles.back} />
+                    </TouchableOpacity>
                     <Text style={styles.title}>V Neck Shirt - Pink </Text>
                     <Image source={cartIcon} style={styles.img} />
                 </View>

@@ -15,6 +15,7 @@ import {
 import searchIcon from './../../src/images/search/search.png';
 import filterIcon from './../../src/images/search/filter.png';
 import backIcon from './../../src/images/backArrow.png';
+import Navigation from './../Navigation';
 
 const itemList = ({imgSrc, prodName, price}) => {
   return (
@@ -53,7 +54,7 @@ function SearchBar(props) {
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <TouchableOpacity onPress={()=>{navigation.navigate('Product')}}>
+          <TouchableOpacity onPress={()=>{navigation.navigate('Navigation')}}>
             <Image style={{width: 30, height: 40}} source={backIcon} />
           </TouchableOpacity>
         </View>

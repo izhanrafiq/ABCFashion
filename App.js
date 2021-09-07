@@ -10,6 +10,8 @@ import Navigation from './components/Navigation';
 import OrderPlaced from './components/OrderPlaced';
 import ProductPage from './components/ProductPage';
 import EditProfileScreen from './components/EditProfile';
+import HomeScreen from './components/Screens/Home';
+
 const Stack = createStackNavigator();
 
 function App() {
@@ -25,6 +27,17 @@ function App() {
           }}
           name="Login"
           component={Login}
+        />
+
+        <Stack.Screen
+          options={{
+            headerStyle: {
+              backgroundColor: '#ff6969',
+            },
+            headerTintColor: 'white',
+          }}
+          name="HomeScreen"
+          component={HomeScreen}
         />
 
         <Stack.Screen
@@ -69,6 +82,7 @@ function App() {
             },
             headerTintColor: 'white',
             headerLeft: null,
+            headerShown: false
           }}
           name="Navigation"
           component={Navigation}

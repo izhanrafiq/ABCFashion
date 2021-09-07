@@ -3,8 +3,6 @@ import { Image, FlatList, TouchableHighlight, SafeAreaView, StatusBar, Button, S
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Feather from 'react-native-vector-icons/Feather';
-import AntDesign from 'react-native-vector-icons/AntDesign';
 
 import HomeScreen from './Screens/Home'
 import SearchScreen from './Screens/Search'
