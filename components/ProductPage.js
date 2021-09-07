@@ -12,7 +12,7 @@ import {
     SafeAreaView
 } from 'react-native';
 import cartIcon from '../src/images/cart.png';
-import backBtn from '../src/images/back.png';
+import backBtn from '../src/images/backArrow.png';
 import { bold } from 'chalk';
 import { useNavigation } from '@react-navigation/native';
 import Navigation from './Navigation';
@@ -21,7 +21,9 @@ import Navigation from './Navigation';
 
 const ProductPage = (props) => {
     const [state, setState] = useState({ selectedButton: null });
-    const nav = useNavigation()
+    const nav = useNavigation();
+    var image=props.route.params.img;
+    var name= props. route.params.name;
 
     const Buttons = () => {
         return (
@@ -112,7 +114,7 @@ const ProductPage = (props) => {
                 <TouchableOpacity onPress={()=>{nav.navigate('Navigation')}}>
                     <Image source={backBtn} style={styles.back} />
                     </TouchableOpacity>
-                    <Text style={styles.title}>V Neck Shirt - Pink </Text>
+                    <Text style={styles.title}>{name} </Text>
                     <Image source={cartIcon} style={styles.img} />
                 </View>
             </View>
@@ -121,7 +123,7 @@ const ProductPage = (props) => {
 
             </View>
             <View style={styles.pImg}>
-                <Image source={require('../src/images/item1.jpg')} style={styles.pImage} />
+                <Image source={image} style={styles.pImage} />
             </View>
             <View style={styles.btn}>
                 <Buttons />

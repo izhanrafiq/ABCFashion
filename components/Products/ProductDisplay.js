@@ -18,7 +18,7 @@ const ProductDisplay = ({imgSrc,prodName,price,width,height})=>{
     // console.log('ooooooo',imgPath,typeof imgPath);
     return(
         <View style={[productItemStyle.mainDiv,{width,height}]}>
-            <TouchableOpacity style={{width:'100%'}} onPress={()=>{navigation.navigate('ProductPage')}}>
+            <TouchableOpacity style={{width:'100%'}} onPress={()=>{navigation.navigate('ProductPage',{name: prodName, img: imgSrc})}}>
 
             <View style={{height:"80%",width:"100%"}}>
                     <Image style={productItemStyle.img} source={imgSrc}/>
